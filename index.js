@@ -26,7 +26,7 @@ const onGenerateSubmit = (e) => {
       setTimeout(() => {
         // Get save url
         const saveUrl = qr.querySelector("canvas").toDataURL();
-        console.log(saveUrl);
+        // console.log(saveUrl);
         
         
         createSaveBtn(saveUrl);
@@ -72,8 +72,8 @@ const createSaveBtn = (saveUrl) => {
   const link = document.createElement("a");
   link.id = "save-link";
   link.classList =
-    'bg-red-500 hover:bg-green-700 text-white font-bold py-2 rounded w-36 m-auto my-5';
-  link.innerHTML = "Save Image";
+    'bg-green-500 hover:bg-green-700 text-white font-bold py-2 rounded w-40 m-auto my-5';
+  link.innerHTML = "Save The QR Code";
 
   link.href = saveUrl;
   link.download = "qrcode.png";
