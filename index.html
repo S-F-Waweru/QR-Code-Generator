@@ -1,25 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="image/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
 
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>QR Code Generator</title>
-</head>
-<body>
-  <div class="">
-    <div>
-        <h1 class="text-3xl font-bold">QR Code Generator</h1>
-    </div>
+  </head>
+  <body>
+    <div class="bg-gray-100 h-fit w-full overflow-hidden flex flex-col items-center">
+        <div class="pt-16 leading-tight text-center flex flex-col gap-2 px-4">
+          <h1 class="text-4xl font-bold text-gray-900">QR Code Generator</h1>
+          <p class="text-gray-600 text-lg">Enter the text or URL to generate a QR Code</p>
+        </div>
 
-  </div>
-</body>
-<script src="index.js"></script>
+        <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 p-4 max-w-6xl mx-auto">
+            <!-- Image container with responsive sizing -->
+            <div class="w-72 md:w-96 lg:w-[28rem]">
+                <img 
+                    src="images/QR code.svg" 
+                    alt="QR Code" 
+                    class="w-full h-auto object-contain"
+                >
+            </div>
+            <div class="flex flex-col gap-4 mt-8 bg-white p-6 rounded-md shadow-sm w-full max-w-md">
+            <div class="flex flex-col text-start gap-2 w-full">
+                <label class="font-regular text-md text-gray-900">Enter URL</label>
+            <input type="url" placeholder="www.example.com" class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:border-blue-500">
+            </div>
+
+             <div class="flex flex-col text-start gap-2 w-full">
+                <label class="font-regular text-md text-gray-900">Size </label>
+                <select class="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:border-blue-500 text-left">
+                    <option value="100">100 x 100</option>
+                    <option value="200">200 x 200</option>
+                    <option value="300" selected>300 x 300</option>
+                    <option value="400">400 x 400</option>
+                    <option value="500">500 x 500</option>
+                    <option value="600">600 x 600</option>
+                    <option value="700">700 x 700</option>
+                </select>
+            </div>
+
+            <button
+            class="bg-gray-700 text-white py-2 px-4 
+            text-semobold leading-relaxed mt-
+            rounded-md hover:bg-gray-800 transition duration-300 ease-in-out" 
+            >Generate QR Code</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
 </html>
